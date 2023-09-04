@@ -5,7 +5,7 @@ import { shikiPlugin } from "@vuepress/plugin-shiki";
 
 export default defineUserConfig({
   lang: 'zh-CN',
-  base: '/Tg_User_Clinet/',
+  base: '/Tg_User_Client/',
   title: 'TgChat Client',
   markdown: {
     code: {
@@ -16,7 +16,7 @@ export default defineUserConfig({
   description: '基于Telethon协议端，支持onebot12',
   theme: hopeTheme({
     // url
-    hostname: 'https://Charles-Hello.github.io/Tg_User_Clinet/',
+    hostname: 'https://Charles-Hello.github.io/Tg_User_Client/',
     // 站点图标
     favicon: '/image/logo.png',
     // logo
@@ -24,7 +24,7 @@ export default defineUserConfig({
     // 打印
     print: false,
     // repo
-    repo: 'Charles-Hello/Tg_User_Clinet',
+    repo: 'Charles-Hello/Tg_User_Client',
     // 热更新，debug用
     hotReload: false,
     // 编辑功能

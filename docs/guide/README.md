@@ -1,7 +1,7 @@
 # 开始
 此文档将引导你使用本项目。
 ## 许可证
-本项目采用 [AGPLv3](https://github.com/Charles-Hello/Tg_User_Clinet/blob/main/LICENSE) 许可证
+本项目采用 [AGPLv3](https://github.com/Charles-Hello/Tg_User_Client/blob/main/LICENSE) 许可证
 ::: danger AGPLv3
 本项目不带有主动添加，涉及金钱接口，不鼓励、不支持一切商业使用。
 :::
