@@ -5,7 +5,7 @@ import { shikiPlugin } from "@vuepress/plugin-shiki";
 
 export default defineUserConfig({
   lang: 'zh-CN',
-  base: '/TgChatBotClient/',
+  base: '/Tg_User_Clinet/',
   title: 'TgChat Client',
   markdown: {
     code: {
