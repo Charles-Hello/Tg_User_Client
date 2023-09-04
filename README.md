@@ -24,22 +24,20 @@ _✨ 支持nonebot2调用 ✨_
   </a>
 </p>
 
-## 简介
+## ✨简介
 
 `TgUser`基于telethon，支持`onebot12`通信协议。
 
-## 文档
+## ❤️上游依赖
+- [Telethon](https://github.com/LonamiWebs/Telethon)：Telethon是一个asyncio Python 3 MTProto库，用于与Telegram的API进行交互。 作为用户或通过机器人帐户
+
+## 📌文档
 
 文档连接：[传送门](https://Charles-Hello.github.io/Tg_User_Clinet/)
 
-## 许可证
-`TelethonUser Client` 采用 [AGPLv3](https://github.com/Charles-Hello/Tg_User_Clinet/blob/main/LICENSE) 协议开源，不鼓励、不支持一切商业使用。
-
-## 上游依赖
-- [Telethon](https://github.com/LonamiWebs/Telethon)：Telethon是一个asyncio Python 3 MTProto库，用于与Telegram的API进行交互。 作为用户或通过机器人帐户
 
 
-## Onebot12支持
+## ❤️Onebot12支持
 
 - [x] HTTP
 - [x] HTTP Webhook
