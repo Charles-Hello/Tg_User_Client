@@ -1,0 +1,50 @@
+{
+  "tgbot_client/action_manager/manager.py": {
+    "description": "接收action请求,action函数[归类]"
+  },
+  "tgbot_client/com_tgchat/com_tgchat.py": {
+    "description": "这里写调用action的api"
+  },
+  "tgbot_client/com_tgchat/message.py": {
+    "description": "实现对应onebot函数[归类]"
+  },
+  "tgbot_client/consts.py": {
+    "description": "定义的全局变量"
+  },
+  "tgbot_client/config.py": {
+    "description": "配置env文件"
+  },
+  "tgbot_client/startup.py": {
+    "description": "所有任务的启动器"
+  },
+  "tgbot_client/tgchat/adapter.py": {
+    "description": "ws接收nonebot的action请求"
+  },
+  "tgbot_client/tgchat/tgchat.py": {
+    "description": "拿到信息生成对应事件，用ws返回给nonebot"
+  },
+  "tgbot_client/driver/driver.py": {
+    "description": "启动ws和http服务"
+  },
+  "tgbot_client/driver": {
+    "description": "这个driver不用研究"
+  },
+  "tgbot_client/tg_hookapi/function.py": {
+    "description": "发送给应用端ws通信"
+  },
+  "tgbot_client/onebot12/event.py": {
+    "description": "自定义事件类型"
+  },
+  "tgbot_client/com_tgchat/model.py": {
+    "description": "定义发送给nonebot信息模型"
+  },
+  "tgbot_client/action_manager/check.py": {
+    "description": "处理nonebot传来action的参数"
+  },
+  "tgbot_client/action_manager/ws_manger.py": {
+    "description": "处理ws拿到action事件的分类"
+  },
+  "tgbot_client/action_manager/user_manger.py": {
+    "description": "处理user拿到信息的事件的分类"
+  }
+}

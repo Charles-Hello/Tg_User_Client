@@ -1,0 +1,8 @@
+.env    linguist-detectable=false
+.bat	linguist-detectable=false
+*.py text eol=lf
+# 对于所有文件，使用LF（仅换行符）
+* text=auto
+
+# 指定一些例外，如果有的话
+*.bin binary
