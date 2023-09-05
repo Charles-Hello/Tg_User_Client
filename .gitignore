@@ -9,6 +9,8 @@ python36patterns/
 tguserlogin.jpg
 备忘录.txt
 tg_user
+.env
+config.py
 # Distribution / packaging
 .Python
 build/

@@ -9,7 +9,7 @@ from .type import WxType
 from telethon import TelegramClient, events, connection
 import websockets
 import threading
-from tgbot_client.config import Config, WebsocketType
+from tgbot_client.config import Config, Env
 import asyncio
 from tgbot_client.utils import logger_wrapper
 from tgbot_client.create_qr import creat_qr
@@ -255,4 +255,6 @@ class MyBot:
 
 
 # 创建 MyBot 实例
-bot = MyBot(config=Config())
+env = Env()
+config = Config(_common_config=env.dict())
+bot = MyBot(config)
