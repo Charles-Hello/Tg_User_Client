@@ -1,9 +1,10 @@
 name: Docker Hub Release
 
 on:
-  push:
-    branches:
-      - dev
+  workflow_run:
+    workflows: ["Build and Release with Nuitka"]
+    types:
+      - completed
 
 jobs:
   docker:
