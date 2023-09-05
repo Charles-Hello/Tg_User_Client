@@ -186,4 +186,19 @@ python3 main.py
 linux下运行后没法收起到后台？可以自己选择后台运行的工具，我这里使用的是screen：[教程](https://www.runoob.com/linux/linux-comm-screen.html)
 :::
 ## 使用Docker部署
-### 暂无docker，待开发
+### 部署说明
+::: tip 部署前准备
+首先要求你自身要有docker环境，没有的请自行搜索安装
+```bash
+mkdir tguser
+cd tguser
+#参考配置文件，按照填写配置
+vi .env
+#其中的port：8100，18535为默认映射端口，如需更改，请根据你的.env文件配置
+#这里“你的env绝对路径”的C:\Users\a1140\Desktop\Tg_User_Clinet\.env是你.env的文件位置
+docker run -it -p 8100:8100 -p 18535:18535 --name tguser -v 你的env绝对路径:/app/.env 1140601003/tguserclient:latest
+#em:
+docker run -it -p 8100:8100 -p 18535:18535 --name tguser -v C:\Users\a1140\Desktop\Tg_User_Clinet\.env:/app/.env 1140601003/tguserclient:latest
+```
+启动后按照要求，如需要退出交互式，请按键盘的`ctrl+z`,再按`ctrl+c`即可关闭前台输出，这样docker容器后台也正常执行。可以使用`docker logs tguser`查看后台输出日志，如果有其他的错误请反馈给我！
+:::

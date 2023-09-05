@@ -114,6 +114,11 @@ export default defineUserConfig({
           // }
         ]
       }
+      ,{
+        text: '常见错误',
+        icon: 'material-symbols:error',
+        link: '/error/',
+      },
     ],
     plugins: {
       // md插件
