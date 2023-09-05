@@ -65,8 +65,8 @@ jobs:
       - name: ${{ runner.os }} Release
         uses: softprops/action-gh-release@v1
         with:
-          draft: true
-          prerelease: true
+          draft: false
+          prerelease: false
           fail_on_unmatched_files: false
           files: |
             build/window_tg_user.exe
