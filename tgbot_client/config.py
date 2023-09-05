@@ -165,7 +165,7 @@ class WSUrl(AnyUrl):
 class Config(BaseConfig):
     """主要配置"""
 
-    tgusername: str = "session_name2"
+    tgusername: str = "session_name"
     """tg session name"""
     _env_file: DotenvType = ".env", ".env.prod"
     host: IPvAnyAddress = IPv4Address("127.0.0.1")
@@ -202,12 +202,12 @@ class Config(BaseConfig):
     """默认日志等级"""
     log_days: int = 10
     """日志保存天数"""
-    cache_days: int = 1
+    cache_days: int = 3
     """文件缓存天数"""
 
-    tg_api_id: int = 4626139
+    tg_api_id: int = 212121
     """tg api id"""
-    tg_api_hash: str = "1c204c080c97e5a796dff9402a700aa9"
+    tg_api_hash: str = "111111111111111111"
     """tg api hash"""
 
     tg_proxy: bool = True
@@ -223,7 +223,7 @@ class Config(BaseConfig):
     tg_qrlogin: bool = False
     tg_qrlogin_qrWeb_port: int = 18535
     tg_qq_email_status :bool = True
-    tg_qrlogin_qqemail: str = "1140601003@qq.com"
+    tg_qrlogin_qqemail: str = "xxxxxxxx@qq.com"
     # qr_emailfake_str 防伪标识符
     tg_qrlogin_qqemail_fakeStr: str = "你好呀！赛利亚！"
 

@@ -7,7 +7,8 @@ python36patterns/
 *.so
 *.session*
 tguserlogin.jpg
-备忘录.py
+备忘录.txt
+tg_user
 # Distribution / packaging
 .Python
 build/
