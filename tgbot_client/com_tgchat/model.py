@@ -41,3 +41,7 @@ class Message(BaseModel):
     """群组与频道id共用"""
     ischannel:bool
     """是否为频道消息"""
+    reply_message:str  
+    """回复的消息"""
+    reply_sender_id:str
+    """获取回复信息的id"""

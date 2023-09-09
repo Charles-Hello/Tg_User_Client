@@ -98,6 +98,45 @@ class Uploadfile(BaseModel):
     magic: Union[str, bytes, Path]
 
 
+class Deletmessage(BaseModel):
+    """
+    description: 删除信息
+    """
+    function="delete_message"
+    chat_id :str
+    message: str
+    def __init__(self, chat_id,message, function="delete_message"):
+            super().__init__(chat_id=chat_id,message=message, function=function)
+
+    async def run(self):
+        req_dict = {
+            "function": self.function,
+            "chat_id":self.chat_id,
+            "message": self.message,
+        }
+        await send_ws(req_dict)
+        
+        
+class Editmessage(BaseModel):
+    """
+    description: 编辑信息
+    """
+    function="edit_message"
+    chat_id :str
+    before_message: str
+    after_message: str
+    def __init__(self, chat_id,before_message,after_message, function="edit_message"):
+            super().__init__(chat_id=chat_id,before_message=before_message, after_message=after_message,function=function)
+
+    async def run(self):
+        req_dict = {
+            "function": self.function,
+            "chat_id":self.chat_id,
+            "before_message": self.before_message,
+            "after_message": self.after_message,
+        }
+        await send_ws(req_dict)
+
 def ApiManger(_type: str):
     """_summary_
 
@@ -106,6 +145,8 @@ def ApiManger(_type: str):
         _type2 (str): send_file,
         _type3 (str): get_self_info
         _type4 (str): get_id_info
+        _type5 (str): delete_message
+        _type6 (str): edit_message
 
     Returns:
         _type_: fun_class
@@ -120,3 +161,7 @@ def ApiManger(_type: str):
         return Sendfile
     elif _type == "upload_file":
         return Uploadfile
+    elif _type == "delete_message":
+        return Deletmessage
+    elif _type == "edit_message":
+        return Editmessage

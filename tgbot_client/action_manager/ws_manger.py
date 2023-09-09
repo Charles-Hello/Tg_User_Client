@@ -107,12 +107,8 @@ class MessageHandler(Generic[E]):
         """
         获取个人id
         """
-        from telethon.tl.types import PeerUser, PeerChat, PeerChannel
-
-        # my_user    = await client.get_entity(PeerUser(some_id))
-        # my_chat    = await client.get_entity(PeerChat(some_id))
+        from telethon.tl.types import PeerUser
         my_channel = await self.bot.client.get_entity(PeerUser(msg['wxid']))
-        # entity = await self.bot.client.get_entity(msg['wxid'])
         print(my_channel.stringify())
         result_queue.put(str(my_channel))
 
@@ -133,4 +129,27 @@ class MessageHandler(Generic[E]):
         处理文件
         """
         await self.bot.client.send_file(msg['wxid'], msg['file'])
+        return True
+      
+      
+    @add_handler(TgUserType.DELETE_MSG)
+    async def delete_message(self, msg: dict) -> E:
+        """
+        删除我的message
+        """
+        async for message in self.bot.client.iter_messages(int(msg["chat_id"]),from_user="me"):
+          if message.message == msg['message']:
+              await self.bot.client.delete_messages(int(msg["chat_id"]), message_ids=message.id)
+              break
+        return True
+
+    @add_handler(TgUserType.DEIT_MSG)
+    async def edit_message(self, msg: dict) -> E:
+        """
+        编辑我的message
+        """
+        async for message in self.bot.client.iter_messages(int(msg["chat_id"]),from_user="me"):
+          if message.message == msg['before_message']:
+              await self.bot.client.edit_message(message, msg["after_message"])
+              break
         return True

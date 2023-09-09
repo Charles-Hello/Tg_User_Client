@@ -26,6 +26,35 @@ async def _(item: ApiManger("send_text")):
 
 
 @router.post(
+    "/delete_message",
+    name="删除信息",
+    description="""
+    传chat_id[str]和message[str]参数
+""",
+)
+async def _(item: ApiManger("delete_message")):
+    try:
+        await item.run()
+        return {"status": "ok"}
+    except Exception:
+        return HTTPException(status_code=403, detail="Failed to delete message to WebSocket")
+
+@router.post(
+    "/edit_message",
+    name="编辑信息",
+    description="""
+    传chat_id[str]和传after_message[str]和传before_message[str]
+""",
+)
+async def _(item: ApiManger("edit_message")):
+    try:
+        await item.run()
+        return {"status": "ok"}
+    except Exception:
+        return HTTPException(status_code=403, detail="Failed to edit message to WebSocket")
+
+
+@router.post(
     "/send_photo",
     name="发送图片信息",
     description="""
@@ -52,7 +81,7 @@ async def _(item: ApiManger("get_self_info")):
         return await item.run()
     except Exception:
         return HTTPException(
-            status_code=402, detail="Failed to send self_info to WebSocket"
+            status_code=402, detail="Failed to get self_info to WebSocket"
         )
 
 
@@ -68,7 +97,7 @@ async def _(item: ApiManger("get_id_info")):
         return await item.run()
     except Exception:
         return HTTPException(
-            status_code=402, detail="Failed to send self_info to WebSocket"
+            status_code=404, detail="Failed to send self_info to WebSocket"
         )
 
 
@@ -153,5 +182,5 @@ async def _(
     except Exception as e:
         print(e)
         return HTTPException(
-            status_code=402, detail="Failed to send self_info to WebSocket"
+            status_code=405, detail="Failed to send file to WebSocket"
         )

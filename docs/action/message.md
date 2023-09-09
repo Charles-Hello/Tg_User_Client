@@ -70,6 +70,106 @@ async def test():
 
 ## 撤回消息<Badge text="标准" type="success" />
 action: `delete_message`
-:::danger Tgchat
-未实现该动作。
+
+
+:::tabs
+
+@tab 请求参数
+| 字段名    | 数据类型 |    说明    |
+| :-------: | :------: | :--------: |
+| `message` | string | 要删除的信息|
+| `chat_id` | string | 聊天的id |
+
+
+@tab 响应数据
+无。
+
+@tab 请求示例
+```json
+{
+    "action": "delete_message",
+    "params": {
+        "chat_id": "12121211",
+        "message":"string"
+    }
+}
+```
+
+@tab 响应示例
+```json
+{
+    "status": "ok",
+    "retcode": 0,
+    "data": true,
+    "message": ""
+}
+```
+
+@tab 在nb2使用
+```python
+from nonebot.adapters.onebot.v12 import Bot, MessageSegment
+from nonebot import get_bot
+
+async def test():
+    bot = get_bot()
+    await bot.delete_message(chat_id=event.user_id,message=message)
+
+```
+
+:::
+
+
+
+
+## 编辑消息<Badge text="标准" type="success" />
+action: `edit_message`
+
+
+:::tabs
+
+@tab 请求参数
+| 字段名    | 数据类型 |    说明    |
+| :-------: | :------: | :--------: |
+| `before_message` | string | 要编辑的信息|
+| `after_message` | string | 编辑信息的内容|
+| `chat_id` | string | 聊天的id |
+
+
+@tab 响应数据
+无。
+
+@tab 请求示例
+```json
+{
+    "action": "edit_message",
+    "params": {
+        "before_message":"string",
+        "after_message":"string",
+        "chat_id": "12121211",
+
+    }
+}
+```
+
+@tab 响应示例
+```json
+{
+    "status": "ok",
+    "retcode": 0,
+    "data": true,
+    "message": ""
+}
+```
+
+@tab 在nb2使用
+```python
+from nonebot.adapters.onebot.v12 import Bot, MessageSegment
+from nonebot import get_bot
+
+async def test():
+    bot = get_bot()
+    await bot.edit_message(chat_id=event.user_id,before_message=before_message,after_message=after_message)
+
+```
+
 :::

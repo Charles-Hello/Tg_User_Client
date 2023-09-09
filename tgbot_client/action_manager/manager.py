@@ -6,7 +6,7 @@ from sys import exit
 from typing import Callable, Literal, Optional, ParamSpec, TypeVar, Union
 
 from pydantic import BaseModel
-from tgbot_client.action_manager.test import bot
+from tgbot_client.action_manager.bot_core import bot
 from tgbot_client.com_tgchat import tguserApi
 from tgbot_client.config import Config
 from tgbot_client.consts import IMPL, ONEBOT_VERSION, PREFIX, VERSION
@@ -197,6 +197,29 @@ class ActionManager(ApiManager):
             "onebot_version": ONEBOT_VERSION,
         }
         return ActionResponse(status="ok", retcode=0, data=data)
+
+    @standard_action
+    def delete_message(self,
+                       message:str ="",
+                       chat_id:str =""
+                       ) -> ActionResponse:
+        """
+        删除信息
+        """
+        self.com_api.delete_message(chat_id=chat_id, message=message)
+        return ActionResponse(status="ok", retcode=0, data=None)
+
+    @standard_action
+    def edit_message(self,
+                       before_message:str ="",
+                       after_message:str ="",
+                       chat_id:str =""
+                       ) -> ActionResponse:
+        """
+        编辑信息
+        """
+        self.com_api.edit_message(chat_id=chat_id, before_message=before_message, after_message=after_message)
+        return ActionResponse(status="ok", retcode=0, data=None)
 
     @standard_action
     async def send_message(
@@ -535,7 +558,8 @@ class ActionManager(ApiManager):
             )
         if isinstance(data, str):
             data = b64decode(data)
-        file_id = await self.file_manager.cache_file_id_from_data(data, name)
+            new_image_data = b64decode(data)
+        file_id = await self.file_manager.cache_file_id_from_data(new_image_data, name)
         return ActionResponse(status="ok", retcode=0, data={"file_id": file_id})
 
     @standard_action

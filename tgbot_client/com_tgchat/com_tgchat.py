@@ -28,9 +28,9 @@ class MessageReporter:
         MessageReporter.func = func
 
 
-class ComProgress:
+class Progress:
     """
-    com通讯组件
+    通讯组件
     """
 
     # TODO 这里是调用cpp框架的接口，需要修改
@@ -51,9 +51,9 @@ class ComProgress:
         self.msg_reporter.register_message_handler(func)
 
 
-class tguserApi(ComProgress):
+class tguserApi(Progress):
     """
-    comTG通信接口，继承ComProgress，这里只定义方法
+    TG通信接口，继承Progress，这里只定义方法
     """
 
     AddressBook: list[dict] = None
@@ -73,6 +73,23 @@ class tguserApi(ComProgress):
         """
         fun = ApiManger("send_text")(message, wxid).run
         asyncio.create_task(fun())
+        return True
+    
+    def delete_message(self,chat_id:str, message: str) -> bool:
+        """
+        说明:
+            删除文本消息
+
+        参数:
+            * `chat_id`: 来自对话的id
+            * `message`: 要删除内容
+
+        返回:
+            * `bool`: 操作是否成功
+        """
+        fun = ApiManger("delete_message")(chat_id, message).run
+        asyncio.create_task(fun())
+        return True
 
     def send_image(self, wxid: str, image_path: str) -> bool:
         """

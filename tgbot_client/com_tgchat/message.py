@@ -170,6 +170,8 @@ class MessageHandler(Generic[E]):
                     group_id=msg.group_id,
                     ischannel=msg.ischannel,
                     isSendMsg=isSendMsg,
+                    reply_message=msg.reply_message,
+                    reply_sender_id=msg.reply_sender_id
                 )
             return PrivateMessageEvent(
                 id=event_id,
@@ -182,6 +184,8 @@ class MessageHandler(Generic[E]):
                 user_id=msg.wxid,
                 ischannel=msg.ischannel,
                 isSendMsg=isSendMsg,
+                reply_message=msg.reply_message,
+                reply_sender_id=msg.reply_sender_id
             )
 
         # 获取at

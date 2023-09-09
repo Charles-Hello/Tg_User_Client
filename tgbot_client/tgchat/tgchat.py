@@ -28,7 +28,7 @@ from tgbot_client.utils import logger_wrapper
 from telethon import TelegramClient, events
 from .adapter import Adapter
 import asyncio
-from tgbot_client.action_manager.test import bot
+from tgbot_client.action_manager.bot_core import bot
 from tgbot_client.action_manager.login_lock import login_lock
 
 log = logger_wrapper("TgUser Manager")

@@ -13,6 +13,10 @@ class TgUserType(auto):
     """文本消息"""
     IMAGE_MSG = "send_file"
     """图片消息"""
+    DELETE_MSG = "delete_message"
+    """删除消息"""
+    DEIT_MSG = "edit_message"
+    """编辑消息"""
     # VOICE_MSG = 34
     # """语音消息"""
     # FRIEND_REQUEST = 37
