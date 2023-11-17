@@ -44,7 +44,7 @@ async def websocket_handler(websocket):
 class MyBot:
     def __init__(self, config: Config):
         self.username = config.tgusername
-        self.config = Config()
+        self.config = config
         if config.tg_proxy:
             if config.tg_proxy_mode == "socks5":
                 if not config.tg_proxy_user:
@@ -187,5 +187,7 @@ class MyBot:
 
 # 创建 MyBot 实例
 env = Env()
+
 config = Config(_common_config=env.dict())
+print(config)
 bot = MyBot(config)

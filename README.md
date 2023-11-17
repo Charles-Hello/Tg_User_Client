@@ -54,7 +54,7 @@ _✨ 支持nonebot2调用 ✨_
 如果你有想法、有能力，欢迎:
 - [提交 Issue](https://github.com/Charles-Hello/Tg_User_Client/issues)
 - [提交 Pull request](https://github.com/Charles-Hello/Tg_User_Client/pulls)
-- [在交流群内进行反馈](https://t.me/stduynonebot2)
+- [在交流群内进行反馈](https://t.me/StudynoneBot2)
 
 
 
