@@ -16,6 +16,8 @@ USER_AGENT = "OneBot/12(tguser)"
 PREFIX = "tg"
 """拓展前缀"""
 
+ASP_WORK = "asp_work"
+"""保存定时任务"""
 FILE_CACHE = "file_cache"
 """保存文件缓存目录，为了防止意外，不要和其他目录放在一起"""
 LOG_PATH = "log"

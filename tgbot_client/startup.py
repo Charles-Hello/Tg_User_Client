@@ -11,12 +11,16 @@ from uuid import uuid4
 from tgbot_client import get_driver, get_Tgchat
 from tgbot_client.action_manager import router
 from tgbot_client.tg_hookapi import tgrouter
+from tgbot_client.user_plugins import *
 from tgbot_client.config import Config, WebsocketType
 from tgbot_client.driver import URL, HTTPServerSetup, WebSocketServerSetup
 from tgbot_client.file_manager import database_close, database_init
 from tgbot_client.log import logger
 from tgbot_client.onebot12 import HeartbeatMetaEvent
 from tgbot_client.scheduler import scheduler, scheduler_init, scheduler_shutdown
+
+#定时任务的初始化设置
+init_scheduled_tasks()
 
 driver = get_driver()
 tgchat = get_Tgchat()

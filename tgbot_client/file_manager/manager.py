@@ -6,7 +6,7 @@ from uuid import uuid4
 
 from httpx import URL, AsyncClient
 import os
-from tgbot_client.consts import DOWNLOAD_TIMEOUT, FILE_CACHE
+from tgbot_client.consts import DOWNLOAD_TIMEOUT, FILE_CACHE,ASP_WORK
 from tgbot_client.utils import logger_wrapper, run_sync
 
 from .model import FileCache
@@ -23,8 +23,11 @@ class FileManager:
     """文件缓存地址"""
 
     def __init__(self) -> None:
+        self.file_path1 = Path(f"./{ASP_WORK}")
+        self.file_path1.mkdir(parents=True, exist_ok=True)
         self.file_path = Path(f"./{FILE_CACHE}/temp")
         self.file_path.mkdir(parents=True, exist_ok=True)
+        
 
     async def clear_directory(self, directory_path):
         try:
