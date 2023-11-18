@@ -16,7 +16,7 @@ from .json_data import add_task, list_tasks, delete_task, modify_task, delete_al
 
 
 class Apscheduler_data:
-    apscheduler_data = None
+    apscheduler_data = BackgroundScheduler(timezone="Asia/Shanghai")
 
 
 def get_all_task_ids(Scheduler_data):
