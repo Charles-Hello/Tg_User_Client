@@ -4,7 +4,7 @@ from pathlib import Path
 from tgbot_client.consts import DOWNLOAD_TIMEOUT, FILE_CACHE,ASP_WORK
 from toollib.guid import SnowFlake
 snow = SnowFlake()
-uid = snow.gen_uid() 
+
 cwd = Path(".") / ASP_WORK
 # 定时任务存储的 JSON 文件路径
 TASKS_FILE_PATH = Path(".") / ASP_WORK / 'tasks.json'
@@ -15,7 +15,7 @@ def add_task(name, sender, text, cron_expression,status):
     """
     tasks = load_tasks()
     new_task = {
-        'id': str(uid),
+        'id': str(snow.gen_uid()),
         'name': name,
         'sender': sender,
         'text': text,
